@@ -46,7 +46,7 @@ function checkStorage(available, ordered) {let result; if (available >= ordered)
 
   console.log(checkStorage(100, 101));
 
-// if else if (warunek pierwszy - zamiast ordered = 0 należy wpisać ordered < 1)
+// if else if (warunek pierwszy - zamiast ordered = 0 należy wpisać ordered < 1, inaczej się sypie)
 
 function checkSStorage(available, ordered) {let result; if (ordered < 1) 
   {result = `There are no products in the order!`;}
@@ -57,7 +57,7 @@ function checkSStorage(available, ordered) {let result; if (ordered < 1)
 
   console.log(checkSStorage(100, 101));
 
-  // operator trójargumentowy
+  // operator trójargumentowy (porównanie hasła)
 
   function checkPassword(password) {const correctPassword = `GK`; 
   const result = password === correctPassword ? 
@@ -67,7 +67,33 @@ function checkSStorage(available, ordered) {let result; if (ordered < 1)
     console.log(checkPassword(`GK`));
 
 
+    // switch
 
+    // function getSubscriptionPrice(type) 
+    // {switch (type) 
+    //   {case `starter`: console.log(0); 
+    //     break; 
+    //   case `professional`: console.log(20); 
+    //   break; 
+    //   case `organization`: console.log(50); 
+    //   break; 
+    //   default: result = console.log(`Invalid subsciption type!`);}
+    // }
+
+    // console.log(getSubscriptionPrice(`job`));
+
+function getSubscriptionPrice(type) 
+    {switch (type) 
+      {case `starter`: return 0; 
+        break; 
+      case `professional`: return 20; 
+      break; 
+      case `organization`: return 50; 
+      break; 
+      default: return `Invalid subsciption type!`;}
+    }
+
+    console.log(getSubscriptionPrice(`organization`));
 
 
 
