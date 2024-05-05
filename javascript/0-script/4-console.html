@@ -79,7 +79,7 @@ function getSubscriptionPrice(type)
       break; 
       case `organization`: return 50; 
       break; 
-      default: return `Invalid subsciption type!`;}
+      default : return `Invalid subsciption type!`;}
     }
 
     console.log(getSubscriptionPrice(`organization`));
@@ -116,10 +116,17 @@ function checkAccess(subType) {if (subType === "pro" || subType === "vip")
 {return true;} 
 else {return false;}} 
 
-console.log(checkAccess("free"));
+console.log(checkAccess("pro"));
 
 
+// !
 
+function toggleModalVisibility(isVisible) {switch (isVisible) 
+  {case true : return !true;
+  break; case false : return !false; break; default : return "";
+}}
+
+console.log(toggleModalVisibility(false));
 
   </script>
 
