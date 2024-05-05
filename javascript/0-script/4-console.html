@@ -69,18 +69,7 @@ function checkSStorage(available, ordered) {let result; if (ordered < 1)
 
     // switch
 
-    // function getSubscriptionPrice(type) 
-    // {switch (type) 
-    //   {case `starter`: console.log(0); 
-    //     break; 
-    //   case `professional`: console.log(20); 
-    //   break; 
-    //   case `organization`: console.log(50); 
-    //   break; 
-    //   default: result = console.log(`Invalid subsciption type!`);}
-    // }
 
-    // console.log(getSubscriptionPrice(`job`));
 
 function getSubscriptionPrice(type) 
     {switch (type) 
@@ -95,8 +84,29 @@ function getSubscriptionPrice(type)
 
     console.log(getSubscriptionPrice(`organization`));
 
+// przekonwertowanie na fals - wynikiem będzie perwszy fałszywy operand
+
+console.log(0 && "");
+console.log("" && 0);
+
+// jeżeli są dwa true to zwrócony zostanie prawy
+
+console.log("mango" && "poly");
+console.log("poly" && "mango");
 
 
+// &&
+
+
+function makeMessage(name, price) {let result; if (name === "Radar" && price == 100) 
+  {result =  `You picked ${name}, price per item is ${price} credits`;}
+  else if (name === "Scanner" && price == 200) 
+  {result = `You picked ${name}, price per item is ${price} credits`;} else if
+   (name === "Reactor" && price == 300) 
+  {result = `You picked ${name}, price per item is ${price} credits`;} 
+  else {result = 0;} return result;}
+
+console.log(makeMessage("Scanner", 200));
 
   </script>
 
