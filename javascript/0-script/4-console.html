@@ -140,6 +140,124 @@ console.log(getSubstring("Hello world", 7));
 // toLowerCase() toUpperCase()
 
 
+function normalizeInput(input, to) {const inputText = input; 
+  {switch (to)  
+    {case "upper" :
+return (inputText.toUpperCase()); 
+break; 
+case "lower" : return (inputText.toLowerCase()); 
+break;  default : return 0;} } }
+
+console.log(normalizeInput("AbcDef Ghi", "lower"));
+
+
+// includes
+
+function checkForName(fullname, firstname) {const FullName = fullname; const FirstName = firstname;
+ const AB = FullName.toLowerCase(); const CD = FirstName.toLowerCase(); return AB.includes(CD);
+}
+
+console.log(checkForName("Grzegorz KoRpa", "KOrpa"));
+
+
+
+// startsWith() endsWith()
+
+
+
+function checkFileExtension(fileName, ext) {const FileName = fileName;
+  const Ext = ext; 
+  const EFG =  FileName.endsWith(Ext); {if (EFG === false) {return `File extension does not match`;} 
+  else {return `File extension matches`;} } }
+
+
+console.log(checkFileExtension("styles.css", ".css"));
+
+
+// indexOf()
+
+const message = "Welcam to Poznan";
+const index = message.indexOf("to");
+console.log(index); 
+
+
+// trim
+
+
+function createFileName(name, ext) {const NameName = name; const ExtExt = ext; 
+  const HIJ = NameName.trim(); const KLM = ExtExt.trim(); return `${HIJ}.${KLM}`;}
+
+
+console.log(createFileName("  index ", "html     "));
+
+
+
+// pętla while
+
+let count = 0;
+ while (count < 3)
+{console.log(`Count: ${count}`);
+count += 1;
+}
+
+
+
+// pętla do while
+
+let count2 = 0;
+
+do {console.log(`Count2: ${count2}`);
+count2 += 1;}
+while (count2 < 3);
+
+
+// pętla for
+
+for (let i = 0; i <= 20; i += 5) {
+  console.log(`Count3: ${i}`);
+}
+
+
+// inkrementacja (++value) - prefiksowa
+
+let x = 5;
+let y = ++x;
+console.log(x); // 6
+console.log(y); // 6
+
+
+// inkrementacj (value++) - postfiksowa
+
+
+let b = 5;
+let c = b++;
+console.log(b); // 6
+console.log(c); // 5
+
+
+// dekrementcja (--value) - prefiksowa
+
+let d = 5;
+let e = --d;
+console.log(d); // 4
+console.log(e); // 4
+
+// dekrementcja (value--) - postfiksowa
+
+let f = 5;
+let g = f--;
+console.log(f); // 4
+console.log(g); // 5
+
+// break
+
+for (let h = 0; h < 10; h += 1) {
+  console.log(`Count4: ${h}`);
+  if (h === 5) 
+  {console.log(`BREAK i finisz PONIŻEJ GÓRNEJ ZADANEJ GRANICY`);
+  break;
+}
+}
 
 
   </script>
