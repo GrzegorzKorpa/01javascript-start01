@@ -1,6 +1,6 @@
+"use strict";
 
-<script>
-  "use strict";
+  <script>
 
 
   // if
@@ -223,13 +223,13 @@ console.log(g); // 5
 
 // break
 
-for (let h = 0; h < 10; h += 1) {
-  console.log(`Count4: ${h}`);
-  if (h === 5) 
-  {console.log(`BREAK i finisz PONIŻEJ GÓRNEJ ZADANEJ GRANICY`);
-  break;
-}
-}
+// for (let h = 0; h <script 10; h += 1) {
+//   console.log(`Count4: ${h}`);
+//   if (h === 5) 
+//   {console.log(`BREAK i finisz PONIŻEJ GÓRNEJ ZADANEJ GRANICY`);
+//   break;
+// }
+// }
 
 function check01ForSpam(message01)
 {let result; const ABC = message01.toUpperCase(); result = (`${ABC}`);
@@ -248,23 +248,6 @@ function check02ForSpam(message02)
 }
 console.log(check02ForSpam("korpa"));
 
-function checkForSpam(message)
-{const upperCheckForSpam = message.toUpperCase();
-  const spamMessage = upperCheckForSpam.includes("SPAM");
-  const saleMessage = upperCheckForSpam.includes("SALE");
-  return (spamMessage || saleMessage);
-}
-
-console.log(checkForSpam("Latest technology news")); // false
-console.log(checkForSpam("JavaScript weekly newsletter")); // false
-console.log(checkForSpam("Get best sale offers now!")); // true
-console.log(checkForSpam("Amazing SalE, only tonight!")); // true
-console.log(checkForSpam("Trust me, this is not a spam message")); // true
-console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
-console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
-
 
 
   </script>
-
-  
