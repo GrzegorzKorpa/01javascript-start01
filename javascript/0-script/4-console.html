@@ -1,284 +1,57 @@
-"use strict";
+'use strict'
+<script>
+// użycie break w pętli przykład 01
 
-  <script>
+for (let i = 0; i < 10; i+=1) {
+  console.log(i);
 
+  if (i === 5) {
+    console.log('Met the number 5, interrupt the execution of the cycle');
+    break;
+  }
+}
 
-  // if
+// użycie break w pętli przykład 02
 
- function checkAge(age) {
-  let result; if (age >= 18) {result =`You are an adult`;} return result;
- }
- console.log(checkAge(18));
+function findNumberFromFive(max, target) {
+	console.log("Log in the body of the function before the cycle");
 
-//  if else
+  for (let i = 5; i <= max; i += 1) {
+    console.log("Current counter value i:", i);
 
-function checkStorage(available, ordered) {let result; if (available >= ordered) 
-  {result = `Order is processed, our manager will contact you`;}
-  else {result = `Not enought goods in stock!`;} return result;}
-
-  console.log(checkStorage(100, 101));
-
-// if else if (warunek pierwszy - zamiast ordered = 0 należy wpisać ordered < 1, inaczej się sypie)
-
-function checkSStorage(available, ordered) {let result; if (ordered < 1) 
-  {result = `There are no products in the order!`;}
-  else if (available < ordered) {result = `Your order is too large, 
-    there are not enough items in stock!`;} else 
-    {result = `The order is accepted, our manager will contact you`;}
-  return result;}
-
-  console.log(checkSStorage(100, 101));
-
-  // operator trójargumentowy (porównanie hasła)
-
-  function checkPassword(password) {const correctPassword = `GK`; 
-  const result = password === correctPassword ? 
-  `Access granted` : `Access denied, wrong password!`; return result;
+    if (i === target) {
+      console.log(`Found the number $ {target}, interrupt the cycle`);
+			break;
     }
+  }
 
-    console.log(checkPassword(`GK`));
-
-
-    // switch
-
-
-
-function getSubscriptionPrice(type) 
-    {switch (type) 
-      {case `starter`: return 0; 
-        break; 
-      case `professional`: return 20; 
-      break; 
-      case `organization`: return 50; 
-      break; 
-      default : return `Invalid subsciption type!`;}
-    }
-
-    console.log(getSubscriptionPrice(`organization`));
-
-// przekonwertowanie na fals - wynikiem będzie perwszy fałszywy operand
-
-console.log(0 && "");
-console.log("" && 0);
-
-// jeżeli są dwa true to zwrócony zostanie prawy
-
-console.log("mango" && "poly");
-console.log("poly" && "mango");
-
-
-// &&
-
-
-function makeMessage(name, price) {let result; if (name === "Radar" && price == 100) 
-  {result =  `You picked ${name}, price per item is ${price} credits`;}
-  else if (name === "Scanner" && price == 200) 
-  {result = `You picked ${name}, price per item is ${price} credits`;} else if
-   (name === "Reactor" && price == 300) 
-  {result = `You picked ${name}, price per item is ${price} credits`;} 
-  else {result = 0;} return result;}
-
-console.log(makeMessage("Scanner", 200));
-
-
-// ||
-
-
-function checkAccess(subType) {if (subType === "pro" || subType === "vip") 
-{return true;} 
-else {return false;}} 
-
-console.log(checkAccess("pro"));
-
-
-// !
-
-function toggleModalVisibility(isVisible) {switch (isVisible) 
-  {case true : return !true;
-  break; case false : return !false; break; default : return "";
-}}
-
-console.log(toggleModalVisibility(false));
-
-
-// slice()
-
-function getSubstring(string, lenght) {const fullName = string; const endIndex = length; 
-  return (fullName.slice(0, lenght));}
-
-console.log(getSubstring("Hello world", 7));
-
-
-// toLowerCase() toUpperCase()
-
-
-function normalizeInput(input, to) {const inputText = input; 
-  {switch (to)  
-    {case "upper" :
-return (inputText.toUpperCase()); 
-break; 
-case "lower" : return (inputText.toLowerCase()); 
-break;  default : return 0;} } }
-
-console.log(normalizeInput("AbcDef Ghi", "lower"));
-
-
-// includes
-
-function checkForName(fullname, firstname) {const FullName = fullname; const FirstName = firstname;
- const AB = FullName.toLowerCase(); const CD = FirstName.toLowerCase(); return AB.includes(CD);
+  console.log("Log in body function after cycle");
 }
 
-console.log(checkForName("Grzegorz KoRpa", "KOrpa"));
+findNumber(10, 6);
+console.log("Log after exiting function");
 
+// użycie break i return w pętli przykład 03
 
+function findNumberFromFive(max, target) {
+	console.log("Log in the body of the function before the cycle");
 
-// startsWith() endsWith()
+	for (let i = 5; i <= max; i += 1) {
+	    console.log("Current counter value i:", i);
+	
+	    if (i === target) {
+	      console.log(`Found the number $ {target}, we make a return, interrupting the loop and function`);
+				return i;
+	    }
+	  }
 
-
-
-function checkFileExtension(fileName, ext) {const FileName = fileName;
-  const Ext = ext; 
-  const EFG =  FileName.endsWith(Ext); {if (EFG === false) {return `File extension does not match`;} 
-  else {return `File extension matches`;} } }
-
-
-console.log(checkFileExtension("styles.css", ".css"));
-
-
-// indexOf()
-
-const message = "Welcam to Poznan";
-const index = message.indexOf("to");
-console.log(index); 
-
-
-// trim
-
-
-function createFileName(name, ext) {const NameName = name; const ExtExt = ext; 
-  const HIJ = NameName.trim(); const KLM = ExtExt.trim(); return `${HIJ}.${KLM}`;}
-
-
-console.log(createFileName("  index ", "html     "));
-
-
-
-// pętla while
-
-let count = 0;
- while (count < 3)
-{console.log(`Count: ${count}`);
-count += 1;
+  // Ten console.log nie jest wykonywany
+  console.log("Log in body function after cycle");
 }
 
+const result = findNumber(10, 6);
+console.log("Log after exiting function");
+console.log(`Result of function execution ${result}`);
 
-
-// pętla do while
-
-let count2 = 0;
-
-do {console.log(`Count2: ${count2}`);
-count2 += 1;}
-while (count2 < 3);
-
-
-// pętla for
-
-for (let i = 0; i <= 20; i += 5) {
-  console.log(`Count3: ${i}`);
-}
-
-
-// inkrementacja (++value) - prefiksowa
-
-let x = 5;
-let y = ++x;
-console.log(x); // 6
-console.log(y); // 6
-
-
-// inkrementacj (value++) - postfiksowa
-
-
-let b = 5;
-let c = b++;
-console.log(b); // 6
-console.log(c); // 5
-
-
-// dekrementcja (--value) - prefiksowa
-
-let d = 5;
-let e = --d;
-console.log(d); // 4
-console.log(e); // 4
-
-// dekrementcja (value--) - postfiksowa
-
-let f = 5;
-let g = f--;
-console.log(f); // 4
-console.log(g); // 5
-
-// break
-
-// for (let h = 0; h <script 10; h += 1) {
-//   console.log(`Count4: ${h}`);
-//   if (h === 5) 
-//   {console.log(`BREAK i finisz PONIŻEJ GÓRNEJ ZADANEJ GRANICY`);
-//   break;
-// }
-// }
-
-function check01ForSpam(message01)
-{let result; const ABC = message01.toUpperCase(); result = (`${ABC}`);
-return result; 
-}
-
-console.log(check01ForSpam("SpaM"));
-
-function check02ForSpam(message02)
-{const lkj = message02.toUpperCase();
-  const mnb = lkj.includes("SPAM");
-  const poi = lkj.includes("SALE");
-  return (mnb || poi);
-
-
-}
-console.log(check02ForSpam("Sale"));
-
-
-function getShippingCost(country) {
-  let countryList = "ChinaChileAustraliaJamaica";
-  switch (country)
-  {case "China" : price = 100;
-  break;
-  case "Chile" : price = 250;
-  break;
-  case "Australia" : price = 170;
-  break;
-  case "Jamaica" : price = 120;
-  break;
-  default : price = "";}
-{if (countryList.includes(country)) return `Shipping to ${country} 
-will cost ${price} credits`;
-else return `Sorry, there is no delivery to your country`}}
-
-
- console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170 credits"
-console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your country"
-console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"
-console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
-console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
-console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
-
-
-
-
-
-
-  </script>
-
-    
-
+console.log('Log after cycle');
+</script>
