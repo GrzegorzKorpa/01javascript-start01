@@ -1,59 +1,60 @@
 'use strict'
 <script>
-// użycie break w pętli przykład 01
 
-for (let i = 0; i < 10; i+=1) {
-  console.log(i);
+let power = ['a', 'b', 'c', 'd'];
+console.log(power.length);
+console.log(power[power.length - 1]);
+console.log([(power.length - 1), power[power.length - 1]]);
 
-  if (i === 5) {
-    console.log('Met the number 5, interrupt the execution of the cycle');
-    break;
-  }
-}
 
-// użycie break w pętli przykład 02
+function grzKor(order) {return [(order.length - 1), (order[order.length -1])]};
 
-function findNumberFromFive(max, target) {
-	console.log("Log in the body of the function before the cycle");
+console.log(grzKor(['ab', 'cd', 'ef', 'gh', 'ij']));
 
-  for (let i = 5; i <= max; i += 1) {
-    console.log("Current counter value i:", i);
 
-    if (i === target) {
-      console.log(`Found the number $ {target}, interrupt the cycle`);
-			break;
-    }
-  }
 
-  console.log("Log in body function after cycle");
-}
-
-findNumber(10, 6);
-console.log("Log after exiting function");
-
-// użycie break i return w pętli przykład 03
-
-function findNumberFromFive(max, target) {
-	console.log("Log in the body of the function before the cycle");
-
-	for (let i = 5; i <= max; i += 1) {
-	    console.log("Current counter value i:", i);
-	
-	    if (i === target) {
-	      console.log(`Found the number $ {target}, we make a return, interrupting the loop and function`);
-				return i;
-	    }
-	  }
-
-  // Ten console.log nie jest wykonywany
-  console.log("Log in body function after cycle");
-}
-
-const result = findNumber(10, 6);
-console.log("Log after exiting function");
-console.log(`Result of function execution ${result}`);
-
-console.log('Log after cycle');
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
