@@ -28,6 +28,67 @@ function tartar(min, max) {
 
 console.log(tartar(1, 4));
 
+// sumowanie elementów tablicy wg wzoru 01 
+// przywołanego poniżej (sum5, żeby odróżnić od iinych 'sum')
+let planets = [10, 20, 70];
+    let sum5 = 0;
+    for (let i = 0; i < planets.length; i++) {
+        sum5 += planets[i]}; 
+
+console.log(sum5);
+
+// to co wyżej tylko według wymogów GOIT
+function plaNets(lista) {
+    let sum6 = 0; 
+    for (let i = 0; i < lista.length; i++) {
+        sum6 += lista[i]}; 
+        return sum6;
+}
+
+console.log(plaNets([11, 20, 30, 50, 100])); 
+
+
+
+// sumowanie elementów tablicy sposób nr 01 
+// create an array
+let myNums = [1, 2, 3, 4, 5];
+
+// create a variable for the sum and initialize it
+let sum = 0;
+
+// iterate over each item in the array
+for (let i = 0; i < myNums.length; i++ ) {
+  sum += myNums[i];
+}
+
+console.log(sum) // 15
+
+// sumowanie elementó tablicy sposób nr 02
+// create an array
+const myNums2 = [1,2,3,4,5];
+
+// create a variable for the sum and initialize it
+let sum2 = 0;
+
+// calculate sum using forEach() method
+myNums.forEach( num => {
+  sum2 += num;
+})
+
+console.log(sum2) // 15
+
+// sumowanie elementó tablicy sposób nr 03
+// create an array
+const myNums3 = [1,2,3,4,5];
+
+// use reduce() method to find the sum
+var sum3 = myNums3.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+},0);
+
+console.log(sum3) // 15
+
+
 
 
 
