@@ -33,30 +33,32 @@ console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Ear
 console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
 
 
-
-// function filterArray(numbers) {
-//     const tab = numbers;
-//     for (let i = 0; i < 5; i +=1 );
-//     return tab[i];
-
+// const numBers = [0, 1, 2, 3, 4, 5, 8, 9, 11];
+// {let tagss = [];
+// {for (const numBer of numBers) 
+// {if (numBer < 5) {tagss.push(`${numBer}`)}};
+// console.log(tagss);}
 // }
 
 
-// console.log(filterArray([1, 2, 3, 4, 5])); // [4, 5]
-// console.log(filterArray([1, 2, 3, 4, 5])); // [5]
-// console.log(filterArray([1, 2, 3, 4, 5])); // []
-// console.log(filterArray([12, 24, 8, 41, 76])); // [41, 76]
-// console.log(filterArray([12, 24, 8, 41, 76])); // [24, 41, 76]
-
-const tab = [10, 8, 3, 4, 5];
-
-for (let i = 0; i < 3 ; i++) {
-    const el = tab[i];
-
-
-
-    console.log(el);
+function filterArray(numbers, value) 
+{const tagss = []; 
+    {for (const number of numbers)
+    {if (number > value) {tagss.push(`${number}`)}};
+return tagss;}
 }
+
+
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+
+
+
+
+
 
 
 
