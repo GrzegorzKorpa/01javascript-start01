@@ -1,16 +1,18 @@
 'use strict';
 <script>
 
-const book = {
-  title: "The Last Kingdom",
-  author: "Bernard Cornwell",
-  rating: 8.38,
-};
-const keys = Object.keys(book);
-console.log(keys); // ["title", "author", "genres", "rating"]
+const books = [
+  { title: "The Last Kingdom", author: "Bernard Cornwell", rating: 8.2 },
+  { title: "Beside Still Waters", author: "Robert Sheckley", rating: 9 },
+  { title: "The Dream of a Ridiculous Man", author: "Fyodor Dostoevsky", rating: 6.8 }
+];
 
-const values = Object.values(book);
-console.log(values); // ["The Last Kingdom", "Bernard Cornwell", 8.38]
+let totalRating = 0;
 
+for (const book of books) {
+  totalRating += book.rating;
+}
 
+const averageRating = totalRating / books.length;
+console.log(averageRating); // 8
 </script>
