@@ -1,18 +1,19 @@
 'use strict';
 <script>
 
-const books = [
-  { title: "The Last Kingdom", author: "Bernard Cornwell", rating: 8.2 },
-  { title: "Beside Still Waters", author: "Robert Sheckley", rating: 9 },
-  { title: "The Dream of a Ridiculous Man", author: "Fyodor Dostoevsky", rating: 6.8 }
-];
+const bookShelf = {
+  books: ["The Last Kingdom"],
+  getBooks() {
+    return this.books;
+  },
+  addBook(bookName) {
+    this.books.push(bookName);
+  }
+};
 
-let totalRating = 0;
+console.log(bookShelf.getBooks()); // ["The Last Kingdom"]
+bookShelf.addBook("The Mist");
+bookShelf.addBook("Dream Guardian");
+console.log(bookShelf.getBooks()); // ["The Last Kingdom", "The Mist", "Dream Guardian"]
 
-for (const book of books) {
-  totalRating += book.rating;
-}
-
-const averageRating = totalRating / books.length;
-console.log(averageRating); // 8
 </script>
