@@ -1,5 +1,62 @@
 'use strict';
 <script>
 
+// Operacja ...spread pozwala na stworzenie kopii tablicy 
+// lub „połączenie” dowolnej liczby tablic w jedną nową. 
+// Dotychczas wykorzystywano do tego metody slice() i concat(), 
+// ale operacja rozproszenia umożliwia zrobienie tego samego 
+// w krótszej formie.
+
+// Poniżej dokładna, ale niezależna kopia tablicy temps
+
+const temps = [14, -4, 25, 8, 11];
+const copyOfTemps = [...temps];
+console.log(copyOfTemps); // [14, -4, 25, 8, 11]
+
+// Poniżej kopia dwóch tablic w jednej tablicy - kolejność ma 
+// znaczenie
+
+const lastWeekTemps = [14, 25, 11];
+const currentWeekTemps = [23, 17, 18];
+const allTemps = [...lastWeekTemps, ...currentWeekTemps];
+console.log(allTemps); // [14, 25, 11, 23, 17, 18]
+
+// Poniżej - Operacja spread pozwala rozłożyć właściwości 
+// dowolnej liczby obiektów do jednego nowego.
+
+const first = { propA: 5, propB: 10 };
+const second = { propC: 15 };
+const third = { ...first, ...second };
+console.log(third); // { propA: 5, propB: 10, propC: 15 }
+
+// Poniżej - Kolejność rozkładania ma znaczenie. Nazwy właściwości 
+// obiektu są unikalne, dlatego właściwości obiektu, które 
+// są rozkładane, mogą nadpisać wartość już istniejącej właściwości, 
+// jeśli ich nazwy się pokrywają.
+
+const first = { propA: 5, propB: 10, propC: 50 };
+const second = { propC: 15, propD: 20 };
+
+const third = { ...first, ...second };
+console.log(third); // { propA: 5, propB: 10, propC: 15, propD: 20 }
+
+const fourth = { ...second, ...first };
+console.log(fourth); // { propA: 5, propB: 10, propC: 50, propD: 20 }
+
+// Poniżej - Podczas rozkładania można dodawać właściwości w dowolnym 
+// miejscu. Najważniejsze to pamiętać o unikalności nazwy właściwości 
+// i o tym, że jej wartość może zostać nadpisana.
+
+const first = { propA: 5, propB: 10, propC: 50 };
+const second = { propC: 15 };
+
+const third = { propB: 20, ...first, ...second };
+console.log(third); // { propA: 5, propB: 10, propC: 15 }
+
+const fourth = { ...first, ...second, propB: 20 };
+console.log(fourth); // { propA: 5, propB: 20, propC: 15 }
+
+const fifth = { ...first, propB: 20, ...second };
+console.log(fifth); // { propA: 5, propB: 20, propC: 15 }
 
 </script>
