@@ -1,65 +1,19 @@
 'use strict';
 <script>
 
-function slugify(title) {
-    let titleLower = title.toLowerCase();
-    let titleSplit = titleLower.split(" ");
-    let titleJoin = titleSplit.join("-");
-    return titleJoin;
+function changeEven(numbers, value) {
+    const newArray = [];
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] % 2 === 0) {
+      numbers[i] = numbers[i] + value;
+    }
+    newArray.push(numbers[i]);
+  }
+ return newArray;
 
-    
-}
+};
 
-console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
-console.log(slugify("English for developer")); // "english-for-developer"
-console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
-console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
-
-
-function makeArray(firstArray, secondArray, maxLenhth) {
-
-const temporaryArray = firstArray.concat(secondArray);
-const finalArray = temporaryArray.slice(0, maxLenhth);
-
-return finalArray;
-
-}
-
-console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
-console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
-console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
-
-
-// const numBers = [0, 1, 2, 3, 4, 5, 8, 9, 11];
-// {let tagss = [];
-// {for (const numBer of numBers) 
-// {if (numBer < 5) {tagss.push(`${numBer}`)}};
-// console.log(tagss);}
-// }
-
-
-function filterArray(numbers, value) 
-{const tagss = []; 
-    {for (const number of numbers)
-    {if (number > value) {tagss.push(`${number}`)}};
-return tagss;}
-}
-
-
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
-
-
-
-
-
-
+console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
 
 
 </script>
