@@ -1,11 +1,10 @@
 'use strict';
 <script>
 
-
 const pizzaPalace = {
   pizzas: ["Supercheese", "Smoked", "Four meats"],
   checkPizza(pizzaName) {
-    return pizzas.includes(pizzaName);
+    return this.pizzaName;
   },
   order(pizzaName) {
     const isPizzaAvailable = checkPizza(pizzaName);
@@ -17,8 +16,6 @@ const pizzaPalace = {
     return `Order accepted, preparing «${pizzaName}» pizza`;
   },
 };
-
-pizzaPalace.order("Smoked");
 
 
 
