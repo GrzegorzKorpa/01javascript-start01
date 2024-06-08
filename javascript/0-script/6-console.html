@@ -2,6 +2,17 @@
 <script>
 
 
+function Enemy(speed, power) {
+    this.live = 3;
+    this.speed = speed;
+    this.power = power;
+
+    this.print = function() {
+        console.log(`Przeciwnik ma ${this.live} życia, ${this.speed} szybkości i ${this.power} ataku`);
+    }
+}
+
+console.dir(Enemy);
 
 
 
