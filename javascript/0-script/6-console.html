@@ -1,39 +1,13 @@
 'use strict';
+
 <script>
+let i = 0;
+let sum = 0;
 
-
-let graj = confirm("Chcesz zagrać w papier, kamień i nożyce?");if (graj) {
-    let wybórGracza = prompt("Wpisz papier, kamien lub nozyce.");    if (wybórGracza) {
-        let gracz = wybórGracza.trim().toLowerCase();        if (gracz === "papier" || gracz === "kamien" || gracz === "nozyce") {
-            let wybórKomputera = Math.floor(Math.random() * 3 + 1);
-            let komputer =
-                wybórKomputera === 1
-                    ? "kamien"
-                    : wybórKomputera === 2
-                    ? "papier"
-                    : "nozyce";            let wynik =
-                gracz === komputer
-                    ? "Remis."
-                    : gracz === "kamien" && komputer === "papier"
-                    ? `Gracz: ${gracz}\nKomputer: ${komputer}\nKomputer wygraywa.`
-                    : gracz === "papier" && komputer === "nozyce"
-                    ? `Gracz: ${gracz}\nKomputer: ${komputer}\nKomputer wygraywa.`
-                    : gracz === "nozyce" && komputer === "kamien"
-                    ? `Gracz: ${gracz}\nKomputer: ${komputer}\nKomputer wygraywa.`
-                    : `Gracz: ${gracz}\nKomputer: ${komputer}\nGracz wygraywa!`;
-            alert(wynik);            let grajPonownie = confirm("Graj ponownie?");
-            grajPonownie ? location.reload() : alert("Ok, dziękuję za grę.");
-        } else {
-            alert("Nie wybrałeś z pośród kamien, papier i nozyce.");
-        }
-    } else {
-        alert("Zmieniłeś zdanie, może innym razem.");
-    }
-} else {
-    alert("Ok, może nastęnym razem.");
+while (i < 100) {
+    i++;
+    if (i % 2 === 0) continue; //gdy i jest parzyste przerywamy daną iterację i przechodzimy do następnej
+    sum += i;
 }
-
-
-
-
+console.log(i, `suma kolejnych liczb to ${sum}`);
 </script>
